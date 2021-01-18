@@ -617,16 +617,52 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card {
     position: relative;
-    flex: 1 1 301px;
+    
     display: flex;
     flex-direction: column;
     overflow: hidden;
     margin: 0 0 40px;
     padding: 0 20px 40px;
+   
+    flex: 1 1 301px;
     min-height: 220px;
     border-bottom: 1px solid color-mod(var(--lightgrey) l(+12%));
     background-size: cover;
 }
+
+.post-card-wide {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 0 40px;
+    padding: 0 20px 40px;
+    flex: 1 1 100%;
+    min-height: 100px;
+
+    
+    border-bottom: 1px solid color-mod(var(--lightgrey) l(+12%));
+    background-size: cover;
+}
+
+.post-card {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 0 40px;
+    padding: 0 20px 40px;
+    /* flex: 1 1 100%;
+    min-height: 100px; */
+
+    /* flex: 1 1 301px;
+    min-height: 220px; */
+    border-bottom: 1px solid color-mod(var(--lightgrey) l(+12%));
+    background-size: cover;
+}
+
 
 .post-card-image-link {
     position: relative;
@@ -855,6 +891,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large:not(.no-image) .post-card-header {
         margin-top: 0;
+        
     }
 
     .post-card-large .post-card-image-link {
