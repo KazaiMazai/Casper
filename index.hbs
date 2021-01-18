@@ -31,19 +31,21 @@ into the {body} of the default.hbs template --}}
 
         <div class="post-feed">
             {{^is "paged"}}
-                {{#get "posts" include="tags,author" filter="featured:true" limit="all" as |featured|}}
-		            {{#foreach featured}}
+                {{#get "posts" include="tags,author" filter="featured:true" limit="all" as |featured_posts|}}
+		            {{#foreach featured_posts}}
 			            {{> "post-card"}}
 		            {{/foreach}}
 	            {{/get}}
             {{/is}}
 
             {{#foreach posts visibility="all"}}
+             {{#unless featured}}
                 {{#if feature_image}} 
                 {{> "post-card"}}
                 {{else}}
                 {{> "post-card-journal"}}
                 {{/if}}
+            {{/unless}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 
