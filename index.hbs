@@ -22,9 +22,22 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
+    
+
     <div class="inner posts">
+       
+       
+       
 
         <div class="post-feed">
+            {{^is "paged"}}
+                {{#get "posts" include="tags,author" filter="featured:true" limit="all" as |featured|}}
+		            {{#foreach featured}}
+			            {{> "post-card"}}
+		            {{/foreach}}
+	            {{/get}}
+            {{/is}}
+
             {{#foreach posts visibility="all"}}
                 {{#if feature_image}} 
                 {{> "post-card"}}
