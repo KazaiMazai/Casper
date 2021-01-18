@@ -26,9 +26,15 @@ into the {body} of the default.hbs template --}}
 
         <div class="post-feed">
             {{#foreach posts visibility="all"}}
+                {{#if feature_image}} 
+                {{> "post-card"}}
+                {{else}}
+                {{> "post-card-journal"}}
+                {{/if}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
+                
+                {{!-- {{> "post-card"}} --}}
 
             {{/foreach}}
         </div>
