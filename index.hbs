@@ -31,7 +31,7 @@ into the {body} of the default.hbs template --}}
 
         <div class="post-feed">
             {{^is "paged"}}
-                {{#get "posts" include="tags,author" filter="featured:true" limit="all" as |featured_posts|}}
+                {{#get "posts" include="tags,authors" filter="featured:true" limit="all" as |featured_posts|}}
 		            {{#foreach featured_posts}}
 			            {{> "post-card"}}
 		            {{/foreach}}
